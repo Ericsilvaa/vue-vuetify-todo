@@ -29,10 +29,12 @@
       >
 
       <div v-for="tarefa, i in $store.state.tarefas" :key="i">
+
         <Tarefa 
         :tarefa="tarefa"
         @ConcluidoTogger="tarefa.concluido = !tarefa.concluido"
         />
+        
       </div>
        
 
