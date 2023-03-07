@@ -16,39 +16,19 @@
     ></v-text-field>
     </v-col>
 
+  
+  <ListaTarefas 
+    />
 
-
-    <v-list
-      flat
-      subheader
-    >
-
-      <v-list-item-group
-        multiple
-        active-class=""
-      >
-
-      <div v-for="tarefa, i in $store.state.tarefas" :key="i">
-
-        <Tarefa 
-        :tarefa="tarefa"
-        @ConcluidoTogger="tarefa.concluido = !tarefa.concluido"
-        />
-        
-      </div>
-       
-
-      </v-list-item-group>
-    </v-list>
   </div>
 </template>
 <script>
-import Tarefa from '@/components/Tarefas/Tarefa.vue';
+import ListaTarefas from '@/components/Tarefas/ListaTarefas.vue';
 
 
 export default {
     name: "TarefasView",
-    components: { Tarefa },
+    components: { ListaTarefas },
     data() {
     return{
       campoInput: null,

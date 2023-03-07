@@ -7,7 +7,16 @@
     <!--  -->
     <!-- </v-navigation-drawer> -->
 
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer 
+      v-model="drawer" 
+      class="pt-5 text-center" 
+      app
+    >
+      <v-avatar color="indigo">
+        <v-icon dark >
+        mdi-account-circle
+        </v-icon>
+      </v-avatar>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6"> Vue JS </v-list-item-title>
