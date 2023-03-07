@@ -17,7 +17,7 @@
           <v-btn
             color="grey darken-1"
             text
-            @click="$emit('closeModal')"
+            @click="$emit('fechaModal')"
           >
             Cancelar
           </v-btn>
@@ -45,9 +45,9 @@
     },
     methods: {
       handleDelete() {
-        this.$store.commit('removeTarefa', this.tarefa.id)
+        this.$store.dispatch('removeTarefa', this.tarefa.id)
         this.$emit('fechaModal')
-        
+
       }
     }
   }

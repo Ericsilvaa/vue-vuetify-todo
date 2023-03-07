@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -27,13 +26,13 @@
 
     <DialogEditar 
       v-if="items[0].modal"
-      @closeModal="items[0].modal = false"
+      @fechaModal="items[0].modal = false"
       :tarefa="tarefa"
     />
 
     <DialogDelete 
       v-if="items[1].modal"
-      @closeModal="items[1].modal = false"
+      @fechaModal="items[1].modal = false"
       :tarefa="tarefa"
     />
 

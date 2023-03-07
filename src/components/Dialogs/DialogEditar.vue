@@ -22,7 +22,7 @@
           <v-btn
             color="grey darken-1"
             text
-            @click="$emit('closeModal')"
+            @click="$emit('fechaModal')"
           >
             Cancelar
           </v-btn>
@@ -56,7 +56,7 @@
           id: this.tarefa.id
         }
 
-        this.$store.commit('editarTarefa', newTarefa)
+        this.$store.dispatch('editaTarefa', newTarefa)
         this.$emit('fechaModal')
       }
     },
