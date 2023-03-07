@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -23,30 +24,48 @@
         </v-list-item>
       </v-list>
     </v-menu>
+
+    <DialogEditar 
+      v-if="items[0].modal"
+      @closeModal="items[0].modal = false"
+      :tarefa="tarefa"
+    />
+
+    <DialogDelete 
+      v-if="items[1].modal"
+      @closeModal="items[1].modal = false"
+      :tarefa="tarefa"
+    />
+
   </div>
 </template>
 <script>
-  export default {
-    name: 'TarefaMenu',
-    data: () => ({
-      items: [
-        { 
-          icone: 'mdi-pencil', 
-          title: "Editar",
-          click() {
+import DialogDelete from '../Dialogs/DialogDelete.vue';
+import DialogEditar from '../Dialogs/DialogEditar.vue';
 
-          }
-      },
-        { 
-          icone: 'mdi-trash-can', 
-          title: "Deletar",
-          
-        click() {
-            
-          }
-      },
-      ],
+  export default {
+    name: "TarefaMenu",
+    components: { DialogEditar, DialogDelete },
+    props: ['tarefa'],
+    data: () => ({
+        items: [
+            {
+              icone: "mdi-pencil",
+              title: "Editar",
+              modal: false,
+              click() {
+                this.modal = true
+              }
+            },
+            {
+              icone: "mdi-trash-can",
+              title: "Deletar",
+              modal: false,
+              click() {
+                this.modal = true
+              }
+            },
+        ],
     }),
-  
-  }
+}
 </script>

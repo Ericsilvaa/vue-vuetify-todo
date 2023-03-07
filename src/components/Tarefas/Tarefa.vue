@@ -20,7 +20,7 @@
                 <v-icon color="red lighten-2">mdi-trash-can</v-icon>
               </v-btn> -->
 
-              <TarefaMenu />
+              <TarefaMenu :tarefa="tarefa"/>
             </v-list-item-action>
           </template>
 
