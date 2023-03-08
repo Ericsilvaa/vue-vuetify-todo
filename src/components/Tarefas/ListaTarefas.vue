@@ -20,7 +20,7 @@
           style="background-color: white"
           :style="reorder ? { borderLeft: '2px solid #1976D2', marginLeft: '-2px' } : {}"
           :tarefa="item"
-          @ConcluidoTogger="item.concluido = !item.concluido"
+          @ConcluidoTogger="$store.dispatch('concluirTarefa', item)"
 
         />
 
@@ -48,6 +48,7 @@ export default {
       return this.$store.state.tarefas
     }
   }
+
 
 }
 

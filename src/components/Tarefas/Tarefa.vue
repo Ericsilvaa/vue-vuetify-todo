@@ -40,7 +40,6 @@ export default {
     handleRemoveTarefa(id) {
       this.$store.commit('removeTarefa', id)
     }
-
   }
   
 }

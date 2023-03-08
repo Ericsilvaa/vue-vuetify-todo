@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-// Armazenamento
-import Localbase from 'localbase'
-let db = new Localbase('db')
+import db from '@/services/localbase'
 
 Vue.use(Vuex)
 
@@ -52,6 +50,13 @@ export default new Vuex.Store({
     editaTarefa({commit}, newTarefa){
       db.collection('tarefas').doc({ id: newTarefa.id }).update({
         titulo: newTarefa.titulo
+      }).then (() => {
+          commit('buscaTarefa')
+      })
+    },
+    concluirTarefa({commit}, newTarefa){
+      db.collection('tarefas').doc({ id: newTarefa.id }).update({
+        concluido: !newTarefa.concluido
       }).then (() => {
           commit('buscaTarefa')
       })
